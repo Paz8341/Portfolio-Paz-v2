@@ -148,7 +148,11 @@
 
   .second-section {
     background-color: #faf3e0;
-    /* Sin espacio exterior: la imagen llega a los bordes de la sección. */
+    /* Esta sección tiene su propio layout: no usa el padding ni el centrado de scroll-item. */
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
@@ -193,6 +197,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
     width: 100%;
+    max-width: none;
+    gap: 0;
     margin: 0;
     padding: 0;
   }
@@ -219,7 +225,7 @@
   .enfoque-section .text-content {
     min-width: 0;
     margin: 0;
-    padding: clamp(1.5rem, 4vw, 4rem);
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -419,8 +425,8 @@ header.open .nav-link:hover {
 
 @media (max-width: 900px) {
   /* En móvil apilamos las mitades para mantener el texto legible. */
-  .scroll-item.second-section { padding: 0 !important; }
+  .second-section { min-height: 0; }
   .enfoque-section { grid-template-columns: minmax(0, 1fr); }
   .enfoque-img { aspect-ratio: 4 / 3; }
-  .enfoque-section .text-content { margin: 0 !important; }
+  .enfoque-section .text-content { margin: 0 !important; padding: 2rem 1.5rem; }
 }
