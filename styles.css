@@ -2,9 +2,9 @@
 
 
 * { box-sizing: border-box; }/* Aplica todos los elementos y hace que padding y border no rompan el tamaño real*/
-html { 
+html {
   scroll-behavior: smooth; }/* Controla el comportamiento general del scroll */
-body { 
+body {
   margin: 0; /* elimina margen por defecto del navegador */
   font-family: 'Open Sans', sans-serif; }/* fuente base */
 
@@ -67,8 +67,8 @@ header { /*Contenedor principal del menú superior*/
 /* ===== HAMBURGUESA CLÁSICA (3 RAYAS) ===== */
 
 /* Botón hamburguesa (contenedor del icono) */
-.nav-toggle { 
-  display: none;   /* oculto por defecto (desktop) */      
+.nav-toggle {
+  display: none;   /* oculto por defecto (desktop) */
   margin-left: auto; /* Empuja el botón a la derecha */
   background: #C5BC8E; /* Fondo verde (igual que los botones del menú) */
   border: none;   /* Sin borde */
@@ -162,76 +162,11 @@ header { /*Contenedor principal del menú superior*/
   display: block;  /* muestra el menú */
 }
 
-/* ====== HERO (Inicio) ====== */
-
-.hero { /* Sección principal de bienvenida */
-  background: #D4D0D6; /* color de fondo del hero */
-}
-
-.hero-grid {/* Grid que organiza texto e imagen */
-  display: grid; /* layout en grid */
-  grid-template-columns: 1.1fr 0.9fr;/* texto / imagen */
-  gap: 2rem; /* espacio entre columnas */
-  align-items: center;/* centra verticalmente */
-}
-
-.hero h1 { /*Título principal del hero */
-  font-family: 'Playfair Display', serif;/* tipografía especial */
-  font-size: 3.2rem;/* tamaño grande */
-  margin: 0 0 0.8rem 0;/* separación inferior */
-}
-
-.hero p { /* Texto descriptivo del hero */
-  font-size: 1.15rem;/* tamaño de lectura cómoda */
-  line-height: 1.7;/* altura de línea */
-  margin: 0 0 1.2rem 0;/* separación inferior */
-  max-width: 52ch; /* ancho máximo de lectura */
-}
-
-.hero img {/* Imagen del hero */
-  width: 100%;
-  height: 420px;
-  object-fit: cover;/* recorte proporcional */
-  border-radius: 28px;
-}
-
-/* Botón rosa (tu estilo) */
-.pink-button {
-  background-color: #ff8fa3;/* color principal */
-  border: 1px solid #333;
-  color: black;/* texto negro */
-  padding: 14px 46px;
-  font-size: 16px;
-  border-radius: 25px;
-  cursor: pointer;/* cursor interactivo */
-  display: inline-block;/* se comporta como botón */
-  text-decoration: none;
-}
-.pink-button:hover { /* Hover del botón rosa */
-  background-color: #ff6f8e; /* color más intenso */
-}
-
-/* Cards */
-
-.card {/*una caja bonita que contiene algo  */
-  background: #ffffff;/* fondo blanco para destacar */
-  border-radius: 22px;/* esquinas redondeadas */
-  padding: 1.6rem;/* espacio interior del contenido */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);/* sombra suave */
-}
-
-/* Grid proyectos */
-.grid-3 {/*Como se colocan las cosas, no cómo se ven*/
-  display: grid;/* activa el sistema grid */
-  grid-template-columns: repeat(3, 1fr);/* 3 columnas iguales */
-  gap: 1rem;/* espacio entre columnas */
-}
-
 /* ====== RESPONSIVE MOBILE ====== */
 
 @media (max-width: 700px) {
   .nav-toggle { /* Muestra el botón hamburguesa en móvil */
-    display: block; 
+    display: block;
   }
 
   .nav-links { /* Oculta el menú por defecto */
@@ -250,11 +185,9 @@ header { /*Contenedor principal del menú superior*/
   }
 
   header.open .nav-links {  /* Cuando JS añade la clase "open" */
-    display: flex; 
+    display: flex;
   }
 
-  .hero h1 { font-size: 2.4rem; }
-  .grid-3 { grid-template-columns: 1fr; }
 }
 /* ====== PARCHE RESPONSIVE para tu layout actual (scroll-item / section) ====== */
 
@@ -329,20 +262,19 @@ header { /*Contenedor principal del menú superior*/
   }
 /* Imagen de la sección enfoque */
   .enfoque-img img {
-    height: 260px !important;
+    height: auto !important;
     width: 100% !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     border-radius: 28px !important;
   }
 
 /* Imágenes generales */
   .image-content {
     margin: 0 !important;
-  
+
   }
 
-/* Texto: bajar tamaños en móvil para que no se monten */ 
-  .hero h1,
+/* Texto: bajar tamaños en móvil para que no se monten */
   .enfoque-section h1,
   #contact h1 {
    font-size: 2.2rem !important;
@@ -387,13 +319,6 @@ header { /*Contenedor principal del menú superior*/
 */
 /* ===== DROPDOWN IDIOMAS (VISIBILIDAD) ===== */
 
-.dropdown-menu {
-  display: none;
-}
-
-.dropdown.open .dropdown-menu {
-  display: block;
-}
 
 @media (max-width: 768px) {
 .mobile-dropdown {
@@ -426,7 +351,7 @@ header { /*Contenedor principal del menú superior*/
     margin-left: auto;      /* empuja el grupo a la derecha */
   }
 
-  .mobile-actions .nav-toggle { /* Estilo común para ambos botones */ 
+  .mobile-actions .nav-toggle { /* Estilo común para ambos botones */
     background: #C5BC8E;    /* mismo verde que Projects / CV */
     border: none;
     border-radius: 999px;
