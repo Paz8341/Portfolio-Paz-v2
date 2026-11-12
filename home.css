@@ -277,6 +277,23 @@
 
                          /* =====  6) FOOTER  ========= */
 
+/* ===== FOOTER ===== */
+
+footer {
+  background-color:#18284A; /* azul del foot */
+  color:#edeff2;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #F2F2F2;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
 
   .social-icons {
     margin-top: 10px;
