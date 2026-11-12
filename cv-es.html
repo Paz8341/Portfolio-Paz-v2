@@ -8,104 +8,60 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #F2F1ED;
-      margin: 0;
-      color: #1f1f1f;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-    }
-
-    h1 { font-size: 3rem; margin-bottom: 0.6rem; }
-    .subtitle { font-size: 1.1rem; opacity: 0.85; margin-bottom: 2rem; }
-
-    h2 { font-size: 1.6rem; margin-top: 2.2rem; margin-bottom: 0.8rem; }
-    p { font-size: 1.1rem; line-height: 1.7; margin: 0 0 1rem 0; }
-
-    .card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 1.6rem;
-      margin-top: 1rem;
-    }
-
-    ul {
-      margin: 0.6rem 0 0 1.2rem;
-      padding: 0;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    @media (max-width: 700px) {
-      .two-col { grid-template-columns: 1fr; }
-      h1 { font-size: 2.4rem; }
-    }
-
-    .pink-button {
-      background-color: #ff8fa3;
-      border: 1px solid #333;
-      color: black;
-      padding: 14px 46px;
-      font-size: 16px;
-      border-radius: 25px;
-      cursor: pointer;
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-    }
-
-    .pink-button:hover { background-color: #ff6f8e; }
-
-    .link {
-      display: inline-block;
-      margin-top: 1.8rem;
-      text-decoration: none;
-      color: #1f1f1f;
-      border-bottom: 1px solid rgba(0,0,0,0.25);
-      padding-bottom: 2px;
-    }
-
-    .muted { opacity: 0.8; }
-    .tag { display:inline-block; padding: 6px 10px; border-radius: 999px; background:#faf3e0; margin: 6px 6px 0 0; }
-    .social-icons {
-      margin-top: 2rem;
-      text-align: center;
-}
-
-    .social-icons a {
-      text-decoration: none;   /* ❌ quita la rallita */
-      font-size: 1.8rem;       /* 🔍 hace los iconos más grandes */
-      margin: 0 0.6rem;
-      color: #1f1f1f;
-}
-
-   .social-icons a:hover {
-      opacity: 0.7;
-}
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="cv.css">
+<link rel="stylesheet" href="navigation.css">
 </head>
 
 <body>
+<header>
+  <div class="navbar">
+  <a class="logo" href="index.html">Paz</a>
+
+ <!-- ====== ACCIONES MÓVIL (derecha) ====== -->
+
+   <div class="mobile-actions">
+
+  <!-- Botón idioma (móvil) -->
+  <button class="lang-toggle" aria-label="Change language">
+  <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true">
+  <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.3"/>
+  <path d="M4 12h16M12 3.5c3.5 3.8 3.5 13.2 0 17M12 3.5c-3.5 3.8-3.5 13.2 0 17"
+      stroke="currentColor" stroke-width="1.3" fill="none"/>
+  </svg>
+      </button>
+
+<!-- DROPDOWN IDIOMAS · MÓVIL -->
+  <div class="dropdown mobile-dropdown">
+    <div class="dropdown-menu">
+      <button type="button" onclick="cambiarIdioma('en')">English (EN)</button>
+      <button type="button" onclick="cambiarIdioma('es')">Español (ES)</button>
+      <button type="button" onclick="cambiarIdioma('sv')">Svenska (SV)</button>
+    </div>
+  </div>
+  <!-- Botón menú (hamburguesa) -->
+  <button class="nav-toggle" aria-label="Abrir menú">
+    <span></span>
+  </button>
+
+</div>
+
+
+     <nav class="nav-links" aria-label="Navegación">
+<a href="projects-en.html" id="nav-projects">Projects</a>
+<a href="cv-en.html" id="nav-cv">CV</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" id="nav-language" type="button">Languages ▾</button>
+
+        <div class="dropdown-menu">
+          <button type="button" onclick="cambiarIdioma('en')">English (EN)</button>
+          <button type="button" onclick="cambiarIdioma('es')">Español (ES)</button>
+      <button type="button" onclick="cambiarIdioma('sv')">Svenska (SV)</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <main class="container">
     <h1>Paz Castillo Rocha</h1>
@@ -119,9 +75,9 @@
     <section class="card">
       <h2>Perfil</h2>
       <p>
-       Estudiante de desarrollo web con un fuerte interés en la accesibilidad y el diseño inclusivo. 
-       Mi experiencia profesional en educación especial me ha proporcionado una comprensión práctica y 
-       cercana de las barreras cognitivas, comunicativas y funcionales. Esta experiencia 
+       Estudiante de desarrollo web con un fuerte interés en la accesibilidad y el diseño inclusivo.
+       Mi experiencia profesional en educación especial me ha proporcionado una comprensión práctica y
+       cercana de las barreras cognitivas, comunicativas y funcionales. Esta experiencia
        influye directamente en cómo abordo el diseño web, la usabilidad y la claridad.
       </p>
     </section>
@@ -164,7 +120,7 @@
       <h3 style="margin-top:1.4rem;">Experiencia profesional complementaria</h3>
       <p class="muted">
         Experiencia en los sectores inmobiliario y de seguros,
-        desempeñando funciones de atención al cliente, coordinación de equipos y gestión de procesos. 
+        desempeñando funciones de atención al cliente, coordinación de equipos y gestión de procesos.
         Estas etapas profesionales me permitieron desarrollar habilidades clave como la comunicación efectiva,
         el trabajo en equipo, la responsabilidad, la organización y el liderazgo, competencias que hoy aplico en
         contextos educativos y en el desarrollo de proyectos digitales centrados en las personas.
@@ -205,6 +161,6 @@
 </div>
 
   </main>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

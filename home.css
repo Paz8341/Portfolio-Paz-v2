@@ -1,0 +1,427 @@
+
+                               /* ====1 BASE / RESET==== */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D4D0D6;
+  }
+
+  /* Tipografía para títulos */
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Tamaños base (globales) */
+  h1 {
+    font-size: 4.5rem;
+    font-weight: normal;
+  }
+
+  h2, p {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+                            /* =====2 HEADER / NAV ==== */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #F2F1ED;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    flex-wrap: wrap;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hide-header {
+    transform: translateY(-100%);
+  }
+
+  .logo {
+    font-size: 25px;
+    font-weight: normal;
+    color: black;
+    padding: 5px 10px;
+    font-family: proxima nova; /* fuente de la pagina */
+  }
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+  .nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #C5BC8E;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .nav-link:hover {
+    background-color: #F2F1ED;
+    color: #218838;
+  }
+
+  /* Dropdown idiomas */
+  .dropdown {
+    position: relative;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #C5BC8E;
+    display: inline-block;
+    font-size: 15px;
+  }
+
+  .dropdown:hover {
+    background-color: #F2F1ED;
+    color: #218838;
+  }
+  .dropdown-btn {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.lang-toggle {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #6b705c; /* elegante, no negro */
+  display: flex;
+  align-items: center;
+}
+.lang-icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.3;
+}
+.lang-toggle:hover {
+  color:#218838;
+}
+
+
+                         /* =======3 SCROLL / SECCIONES====== */
+                         /* Ocultar barra de scroll (mantiene el scroll activo) */
+.scroll-container {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE / Edge antiguo */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Edge */
+}
+
+.scroll-item {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+
+  .second-section {
+    background-color: #faf3e0;
+  }
+
+  /* Layout general de secciones (1 y 3) */
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  .text-content {
+    flex: 1;
+    margin-right: 0;
+  }
+
+  .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .image-content img {
+    width: 510px;
+    height: 510px;
+    object-fit: cover;
+    border-radius: 60px;
+    margin-top: 3rem; /* baja la imagen sin afectar al header */
+  }
+
+                            /* =======4. SECCIÓN 2 (ENFOQUE)====== */
+  .enfoque-section {
+    /* La imagen conserva su proporción y deja espacio al texto. */
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .enfoque-img {
+    width: 40%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    flex: 0 1 420px;
+  }
+
+  .enfoque-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    display: block;
+  }
+
+  /* (Unificado) Text-content dentro de sección enfoque */
+  .enfoque-section .text-content {
+    width: auto;
+    padding: clamp(1.5rem, 4vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Tipografía y tamaños específicos dentro de sección enfoque */
+.enfoque-section h1 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.enfoque-section h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  color: #3a3a3a;
+}
+
+
+.enfoque-section p {
+  font-size: 1.25rem;
+  line-height: 1.85;  /*mas aire entre lineas*/
+  margin-bottom: 1.5rem;
+  max-width: 60ch;  /*ancho de la lectura*/
+  color:  #1f1f1f;
+  font-weight: 400;
+}
+
+
+                                     /* ======5. BOTÓN ======== */
+  .pink-button {
+    background-color: #ff8fa3;
+    border: 1px solid #333;
+    color: black;
+    padding: 15px 60px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .pink-button:hover {
+    background-color: #ff6f8e;
+  }
+
+                         /* =====  6) FOOTER  ========= */
+
+
+  .social-icons {
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    color:#edeff2 ;
+    margin: 0 16px;
+    font-size: 34px;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+
+  .social-icons a:hover {
+    color: #ff8fa3;
+  }
+
+                       /* ===== 7) RESPONSIVE ============= */
+
+  .lang-toggle {
+    display: none; /* (🌍) oculto por defecto en PC */
+}
+
+  @media (max-width: 768px) {
+
+/* ===== BOTÓN IDIOMA MÓVIL (🌍) ===== */
+
+/* Asegura que el grupo de acciones se vea */
+.mobile-actions {
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+/* Botón idioma: solo icono, visible y negro */
+.lang-toggle {
+  display: inline-flex;/* globo en modo movil*/
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  color: #000; /* mismo color que Paz */
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* Tamaño real del icono */
+.lang-toggle svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+/* Ajuste menú móvil */
+
+    .section {
+      flex-direction: column;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .text-content, .image-content {
+      margin: 1rem 0;
+    }
+
+    .image-content img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .nav-link {
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    .scroll-item {
+      padding: 2rem 1rem;
+
+    }
+
+    .enfoque-section {
+      flex-direction: column;
+    }
+
+    .enfoque-img, .enfoque-img img {
+      width: 100%;
+      height: auto;
+    }
+
+    .enfoque-section .text-content {
+      width: 100%;
+      padding: 2rem;
+    }
+
+  /* MENÚ MÓVIL: ocultar botones verdes */
+    .nav-links {
+       display: none;
+}
+/* MENÚ MÓVIL ABIERTO: ocultar Languages */
+.nav-links .dropdown {
+  display: none;
+}
+
+
+  /* ===== MENÚ MÓVIL COMO LISTA (SIN BOTONES) ===== */
+
+header.open .nav-links {
+  display: flex;              /* muestra el menú */
+  flex-direction: column;     /* lista vertical */
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  gap: 1.2rem;
+}
+
+header.open .nav-link {
+  background: none;           /* quita verde */
+  border-radius: 0;
+  padding: 0;                 /* quita forma de botón */
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #000;
+}
+
+header.open .nav-link:hover {
+  background: none;
+  color: #218838;
+}
+
+  }
+
+/* Evita que una imagen fija empuje el texto fuera de la pantalla. */
+.image-content img { max-width: 100%; }
+@media (min-width: 769px) and (max-width: 1100px) {
+  .image-content img { width: 100%; height: auto; aspect-ratio: 1; }
+}
+@media (max-width: 900px) {
+  /* La foto de My Approach se reduce sin recortarla ni estirarla. */
+  .enfoque-img { flex: none; max-width: 360px; }
+  .enfoque-img img { height: auto !important; object-fit: contain !important; }
+  .scroll-item:first-of-type { padding-top: 7rem !important; }
+  #intro-titulo { font-size: clamp(2.4rem, 8vw, 4.5rem); }
+  .text-content p { overflow-wrap: break-word; }
+}
