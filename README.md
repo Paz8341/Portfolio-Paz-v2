@@ -1,36 +1,51 @@
-# Portfolio-Paz
+# Portfolio Paz — Version 2.0
 
-This repository contains my personal portfolio website.
+Welcome to the second version of my personal web development portfolio!
 
-The portfolio is built using HTML and CSS and showcases my learning process in web development, focusing on clean structure, accessibility, and responsive design.
+## About this project
 
-The project is a work in progress and will be continuously updated as I improve my skills and add new projects.
+This portfolio represents the next step in my journey of learning web development.
 
-Live version:
-https://paz8341.github.io/Portfolio-Paz/
+My first portfolio was built from scratch using HTML, CSS and JavaScript. It was my first independent web project, where I learned to structure a website, experiment with design and solve coding challenges.
 
-## Segunda versión: Portfolio-Paz-v2
+I decided to preserve that original version as a record of my learning process.
 
-Esta versión conserva el diseño, las imágenes y los comentarios personales del portfolio original. Los cambios se realizan únicamente en este repositorio.
+Version 2.0 builds on the same design and personal identity while improving the code structure, accessibility, responsiveness and multilingual functionality.
 
-### Cambios y archivos
+## Technologies
 
-- `script.js`: un único control para el scroll, los menús y el idioma. Inglés por defecto en inicio; se recuerda la selección manual. Los enlaces directos a un CV o proyectos traducidos respetan su idioma cuando no hay una preferencia guardada.
-- `translations.js`: textos de inicio en inglés, español y sueco, conservando los comentarios de las traducciones originales.
-- `index.html` y `backup-index.html`: carga única de scripts y selector con los tres idiomas.
-- `cv-en.html`, `cv-es.html`, `projects-en.html` y `projects-es.html`: navegación compartida para poder volver a inicio y cambiar de idioma.
-- `cv-sv.html` y `projects-sv.html`: traducciones suecas; se conservan la experiencia, fechas, formación y niveles de idiomas del CV.
-- `home.css`, `cv.css` y `projects.css`: estilos originales separados del HTML para compartirlos entre idiomas sin duplicarlos.
-- `styles.css` y `navigation.css`: correcciones de menús, foco visible, responsive y movimiento reducido. My Approach conserva su imagen completa, con un ancho flexible y proporcionado al texto.
+- HTML5
+- CSS3
+- JavaScript
+- Responsive Web Design
+- Web Accessibility
 
-### Cómo comprobarlo
+## Languages
 
-1. Descarga esta versión y abre la carpeta con VS Code y Live Server. También puedes ejecutar `python -m http.server 8000` y visitar `http://localhost:8000`.
-2. Abre inicio en una ventana privada: debe aparecer en inglés. Elige español o sueco, visita CV y proyectos, vuelve con el enlace Paz y recarga: debe mantenerse el idioma.
-3. Desplázate hacia abajo y hacia arriba: la barra se oculta y reaparece; al llegar arriba siempre se muestra.
-4. Revisa My Approach y las tarjetas en las herramientas responsive del navegador. Pruebas realizadas en Chromium con anchos de 320, 390, 768, 1024 y 1440 px, sin desbordamiento horizontal.
-5. Usa Tab, Enter y Escape para abrir y cerrar los menús. El foco debe permanecer visible; el botón hamburguesa permite cerrar el menú.
+The website supports English, Spanish and Swedish, with English as the default language.
 
-Las tarjetas de proyectos siguen siendo ejemplos pendientes de contenido, como en el original. Las imágenes, fuentes e iconos mantienen sus servicios externos originales.
+## My goals
 
-Para publicar esta copia en GitHub Pages, utiliza **Settings → Pages** de **Portfolio-Paz-v2**, rama `main`, carpeta raíz. Su dirección será `https://paz8341.github.io/Portfolio-Paz-v2/` cuando Pages esté activado. La dirección del apartado original anterior corresponde a la primera versión.
+- Improve my frontend development skills.
+- Create accessible and inclusive digital experiences.
+- Continue learning how to write clean, understandable code.
+- Showcase real projects as I develop my skills.
+- Document my progress towards becoming a Fullstack Developer.
+
+## Portfolio evolution
+
+**Version 1 — My first portfolio**
+
+[View original repository](https://github.com/Paz8341/Portfolio-Paz)
+
+**Version 2 — Improved portfolio**
+
+This repository contains the updated version of my first website.
+
+## Project status
+
+Work in progress — improvements and new projects will be added as I continue learning.
+
+---
+
+*Created with curiosity, patience and a passion for learning.*
