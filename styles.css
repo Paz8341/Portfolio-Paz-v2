@@ -244,28 +244,12 @@ header { /*Contenedor principal del menú superior*/
   display: block !important;   /* evita solapes */
 }
 /* Apilar texto + imagen en columna */
-  .section,
-  .enfoque-section {
+  .section {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
     gap: 1.5rem !important;
     padding: 2rem 1.5rem !important;
-  }
-
-/* Elimina anchos y alturas fijas que rompen el móvil */
-  .enfoque-img,
-  .enfoque-section .text-content {
-    width: 100% !important;
-    height: auto !important;
-    padding: 0 !important;
-  }
-/* Imagen de la sección enfoque */
-  .enfoque-img img {
-    height: auto !important;
-    width: 100% !important;
-    object-fit: contain !important;
-    border-radius: 28px !important;
   }
 
 /* Imágenes generales */
@@ -292,10 +276,6 @@ header { /*Contenedor principal del menú superior*/
     width: 100%;
     max-width: 320px;
     text-align: center;
-  }
-.enfoque-section {
-    height: auto !important;
-    padding-bottom: 3rem !important;
   }
 .enfoque-section h1 {
     margin: 0 0 1rem 0 !important;

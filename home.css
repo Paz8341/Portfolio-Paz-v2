@@ -148,6 +148,11 @@
 
   .second-section {
     background-color: #faf3e0;
+    /* Sin espacio exterior: la imagen llega a los bordes de la sección. */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    padding: 0;
   }
 
   /* Layout general de secciones (1 y 3) */
@@ -183,35 +188,37 @@
 
                             /* =======4. SECCIÓN 2 (ENFOQUE)====== */
   .enfoque-section {
-    /* La imagen conserva su proporción y deja espacio al texto. */
-    max-width: 1200px;
+    /* Dos mitades exactas; el padding del texto queda dentro de su columna. */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
     width: 100%;
-    align-items: center;
-    display: flex;
-    height: auto;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
 
   .enfoque-img {
-    width: 40%;
-    height: auto;
+    position: relative;
+    min-width: 0;
     margin: 0;
     padding: 0;
-    flex: 0 1 420px;
   }
 
   .enfoque-img img {
+    /* Llena la altura de la fila sin imponer el tamaño natural de la foto. */
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     border-radius: 0;
     display: block;
   }
 
   /* (Unificado) Text-content dentro de sección enfoque */
   .enfoque-section .text-content {
-    width: auto;
+    min-width: 0;
+    margin: 0;
     padding: clamp(1.5rem, 4vw, 4rem);
     display: flex;
     flex-direction: column;
@@ -361,19 +368,6 @@
 
     }
 
-    .enfoque-section {
-      flex-direction: column;
-    }
-
-    .enfoque-img, .enfoque-img img {
-      width: 100%;
-      height: auto;
-    }
-
-    .enfoque-section .text-content {
-      width: 100%;
-      padding: 2rem;
-    }
 
   /* MENÚ MÓVIL: ocultar botones verdes */
     .nav-links {
@@ -418,10 +412,15 @@ header.open .nav-link:hover {
   .image-content img { width: 100%; height: auto; aspect-ratio: 1; }
 }
 @media (max-width: 900px) {
-  /* La foto de My Approach se reduce sin recortarla ni estirarla. */
-  .enfoque-img { flex: none; max-width: 360px; }
-  .enfoque-img img { height: auto !important; object-fit: contain !important; }
   .scroll-item:first-of-type { padding-top: 7rem !important; }
   #intro-titulo { font-size: clamp(2.4rem, 8vw, 4.5rem); }
   .text-content p { overflow-wrap: break-word; }
+}
+
+@media (max-width: 900px) {
+  /* En móvil apilamos las mitades para mantener el texto legible. */
+  .scroll-item.second-section { padding: 0 !important; }
+  .enfoque-section { grid-template-columns: minmax(0, 1fr); }
+  .enfoque-img { aspect-ratio: 4 / 3; }
+  .enfoque-section .text-content { margin: 0 !important; }
 }
