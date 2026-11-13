@@ -17,15 +17,20 @@
   }
 
   /* Tamaños base (globales) */
-  h1 {
-    font-size: 4.5rem;
+  h1, #contact h2 {
+    /* El título sigue siendo grande; crece con la pantalla sin saltos. */
+    font-size: clamp(3rem, 5.2vw, 4.5rem);
     font-weight: normal;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 0 0 1.5rem;
   }
 
   h2, p {
-    font-size: 1.8rem;
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
   }
 
                             /* =====2 HEADER / NAV ==== */
@@ -173,7 +178,10 @@
   .text-content {
     flex: 1;
     margin-right: 0;
+    min-width: 0;
   }
+
+  .section .text-content p { max-width: 34ch; }
 
   .image-content {
     flex: 1;
@@ -187,7 +195,7 @@
     height: 510px;
     object-fit: cover;
     border-radius: 60px;
-    margin-top: 3rem; /* baja la imagen sin afectar al header */
+    margin-top: 0; /* Alinea la foto con el bloque de texto, sin desplazarla hacia abajo. */
   }
 
                             /* =======4. SECCIÓN 2 (ENFOQUE)====== */
@@ -232,15 +240,20 @@
   }
 
   /* Tipografía y tamaños específicos dentro de sección enfoque */
-.enfoque-section h1 {
-  font-size: 3.2rem;
-  margin-bottom: 2rem;
+.enfoque-section h2 {
+  font-size: clamp(2.5rem, 3.6vw, 3.2rem);
+  font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem;
 }
 
-.enfoque-section h2 {
+.enfoque-section h3 {
+  font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
+  line-height: 1.35;
   font-weight: 500;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   margin-bottom: 0.6rem;
   color: #3a3a3a;
 }
@@ -378,8 +391,8 @@ footer a:hover {
       margin: 10px 0;
     }
 
-    h1 {
-      font-size: 3rem;
+    h1, #contact h2 {
+      font-size: clamp(2.5rem, 7vw, 3.5rem);
     }
 
     h2 {
@@ -436,7 +449,7 @@ header.open .nav-link:hover {
 }
 @media (max-width: 900px) {
   .scroll-item:first-of-type { padding-top: 7rem !important; }
-  #intro-titulo { font-size: clamp(2.4rem, 8vw, 4.5rem); }
+  #intro-titulo { font-size: clamp(2.5rem, 7vw, 4rem); }
   .text-content p { overflow-wrap: break-word; }
 }
 
