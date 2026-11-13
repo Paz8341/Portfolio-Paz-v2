@@ -1,449 +1,55 @@
-
-                               /* ====1 BASE / RESET==== */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #D4D0D6;
-  }
-
-  /* Tipografía para títulos */
-  h1, h2 {
-    font-family: 'Playfair Display', serif;
-  }
-
-  /* Tamaños base (globales) */
-  h1 {
-    font-size: 4.5rem;
-    font-weight: normal;
-  }
-
-  h2, p {
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.4;
-  }
-
-                            /* =====2 HEADER / NAV ==== */
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #F2F1ED;
-    color: black;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    flex-wrap: wrap;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .hide-header {
-    transform: translateY(-100%);
-  }
-
-  .logo {
-    font-size: 25px;
-    font-weight: normal;
-    color: black;
-    padding: 5px 10px;
-    font-family: proxima nova; /* fuente de la pagina */
-  }
-.navbar {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: auto;
-}
-
-  .nav-link {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: #C5BC8E;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .nav-link:hover {
-    background-color: #F2F1ED;
-    color: #218838;
-  }
-
-  /* Dropdown idiomas */
-  .dropdown {
-    position: relative;
-    cursor: pointer;
-    border-radius: 20px;
-    background-color: #C5BC8E;
-    display: inline-block;
-    font-size: 15px;
-  }
-
-  .dropdown:hover {
-    background-color: #F2F1ED;
-    color: #218838;
-  }
-  .dropdown-btn {
-  background: none;
-  border: none;
-  padding: 10px 20px;
-  font-size: 15px;
-  line-height: 1.2;
-  cursor: pointer;
-}
-.lang-toggle {
-  background: none;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  color: #6b705c; /* elegante, no negro */
-  display: flex;
-  align-items: center;
-}
-.lang-icon {
-  width: 22px;
-  height: 22px;
-  stroke-width: 1.3;
-}
-.lang-toggle:hover {
-  color:#218838;
-}
-
-
-                         /* =======3 SCROLL / SECCIONES====== */
-                         /* Ocultar barra de scroll (mantiene el scroll activo) */
-.scroll-container {
-  scrollbar-width: none;      /* Firefox */
-  -ms-overflow-style: none;   /* IE / Edge antiguo */
-}
-
-.scroll-container::-webkit-scrollbar {
-  display: none;              /* Chrome, Safari, Edge */
-}
-
-.scroll-item {
-  min-height: 100vh;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-}
-
-
-  .second-section {
-    background-color: #faf3e0;
-    /* Esta sección tiene su propio layout: no usa el padding ni el centrado de scroll-item. */
-    width: 100%;
-    max-width: none;
-    min-height: 100vh;
-    margin: 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    align-items: stretch;
-    padding: 0;
-  }
-
-  /* Layout general de secciones (1 y 3) */
-  .section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1200px;
-    width: 100%;
-    padding: 3rem 2rem;
-    gap: 3rem;
-  }
-
-  .text-content {
-    flex: 1;
-    margin-right: 0;
-  }
-
-  .image-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  .image-content img {
-    width: 510px;
-    height: 510px;
-    object-fit: cover;
-    border-radius: 60px;
-    margin-top: 3rem; /* baja la imagen sin afectar al header */
-  }
-
-                            /* =======4. SECCIÓN 2 (ENFOQUE)====== */
-  .enfoque-section {
-    /* Dos mitades exactas; el padding del texto queda dentro de su columna. */
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    width: 100%;
-    max-width: none;
-    gap: 0;
-    margin: 0;
-    padding: 0;
-  }
-
-  .enfoque-img {
-    position: relative;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-  }
-
-  .enfoque-img img {
-    /* Llena la altura de la fila sin imponer el tamaño natural de la foto. */
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-    display: block;
-  }
-
-  /* (Unificado) Text-content dentro de sección enfoque */
-  .enfoque-section .text-content {
-    min-width: 0;
-    margin: 0;
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* Tipografía y tamaños específicos dentro de sección enfoque */
-.enfoque-section h1 {
-  font-size: 3.2rem;
-  margin-bottom: 2rem;
-}
-
-.enfoque-section h2 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-top: 2rem;
-  margin-bottom: 0.6rem;
-  color: #3a3a3a;
-}
-
-
-.enfoque-section p {
-  font-size: 1.25rem;
-  line-height: 1.85;  /*mas aire entre lineas*/
-  margin-bottom: 1.5rem;
-  max-width: 60ch;  /*ancho de la lectura*/
-  color:  #1f1f1f;
-  font-weight: 400;
-}
-
-
-                                     /* ======5. BOTÓN ======== */
-  .pink-button {
-    background-color: #ff8fa3;
-    border: 1px solid #333;
-    color: black;
-    padding: 15px 60px;
-    font-size: 16px;
-    border-radius: 25px;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-  }
-
-  .pink-button:hover {
-    background-color: #ff6f8e;
-  }
-
-                         /* =====  6) FOOTER  ========= */
-
-/* ===== FOOTER ===== */
-
-footer {
-  background-color:#18284A; /* azul del foot */
-  color:#edeff2;
-  padding: 2.5rem 1rem;
-  text-align: center;
-}
-
-footer a {
-  color: #F2F2F2;
-}
-
-footer a:hover {
-  opacity: 0.8;
-}
-
-
-  .social-icons {
-    margin-top: 10px;
-  }
-
-  .social-icons a {
-    color:#edeff2 ;
-    margin: 0 16px;
-    font-size: 34px;
-    transition: color 0.3s;
-    text-decoration: none;
-  }
-
-  .social-icons a:hover {
-    color: #ff8fa3;
-  }
-
-                       /* ===== 7) RESPONSIVE ============= */
-
-  .lang-toggle {
-    display: none; /* (🌍) oculto por defecto en PC */
-}
-
-  @media (max-width: 768px) {
-
-/* ===== BOTÓN IDIOMA MÓVIL (🌍) ===== */
-
-/* Asegura que el grupo de acciones se vea */
-.mobile-actions {
-
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-left: auto;
-}
-
-/* Botón idioma: solo icono, visible y negro */
-.lang-toggle {
-  display: inline-flex;/* globo en modo movil*/
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-
-  color: #000; /* mismo color que Paz */
-  padding: 6px;
-  cursor: pointer;
-}
-
-/* Tamaño real del icono */
-.lang-toggle svg {
-  width: 22px;
-  height: 22px;
-  stroke: currentColor;
-}
-
-/* Ajuste menú móvil */
-
-    .section {
-      flex-direction: column;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    .text-content, .image-content {
-      margin: 1rem 0;
-    }
-
-    .image-content img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-    }
-
-    header {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .nav-link {
-      margin: 10px 0;
-    }
-
-    h1 {
-      font-size: 3rem;
-    }
-
-    h2 {
-      font-size: 1rem;
-    }
-
-    .scroll-item {
-      padding: 2rem 1rem;
-
-    }
-
-
-  /* MENÚ MÓVIL: ocultar botones verdes */
-    .nav-links {
-       display: none;
-}
-/* MENÚ MÓVIL ABIERTO: ocultar Languages */
-.nav-links .dropdown {
-  display: none;
-}
-
-
-  /* ===== MENÚ MÓVIL COMO LISTA (SIN BOTONES) ===== */
-
-header.open .nav-links {
-  display: flex;              /* muestra el menú */
-  flex-direction: column;     /* lista vertical */
-  align-items: center;
-  width: 100%;
-  margin-top: 1.5rem;
-  gap: 1.2rem;
-}
-
-header.open .nav-link {
-  background: none;           /* quita verde */
-  border-radius: 0;
-  padding: 0;                 /* quita forma de botón */
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #000;
-}
-
-header.open .nav-link:hover {
-  background: none;
-  color: #218838;
-}
-
-  }
-
-/* Evita que una imagen fija empuje el texto fuera de la pantalla. */
-.image-content img { max-width: 100%; }
-@media (min-width: 769px) and (max-width: 1100px) {
-  .image-content img { width: 100%; height: auto; aspect-ratio: 1; }
-}
+/* ===== SECCIÓN 1: una portada equilibrada, con mi foto original ===== */
+.hero { background: var(--lavender); padding: 9rem 0 5rem; }
+.hero .section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(3rem, 7vw, 7rem); align-items: center; }
+/* Tipografía para títulos */
+.hero h1 { max-width: 12ch; margin-bottom: 1.5rem; }
+.hero .text-content > p { max-width: 48ch; font-size: 1.05rem; line-height: 1.9; }
+.hero .actions { margin-top: 2rem; }
+.hero-note { display: block; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #18284a33; font-size: 0.75rem; color: var(--muted); }
+.portrait { margin: 0; }
+.portrait img { width: 100%; height: auto; aspect-ratio: 4 / 4.5; object-fit: cover; border-radius: 48% 48% 8px 8px; }
+.portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 0; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+/* ===== SECCIÓN 2 (ENFOQUE): mitades exactas, sin contenedor centrado ===== */
+.second-section { background: var(--beige); }
+.enfoque-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-height: 650px; }
+.enfoque-img { position: relative; min-width: 0; }
+.enfoque-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* El padding queda dentro de la mitad derecha y no altera el reparto 50/50. */
+.enfoque-section .text-content { align-self: center; padding: clamp(2.5rem, 5vw, 6rem); }
+.enfoque-section h2 { margin-bottom: 2rem; }
+.enfoque-section h3 { margin-bottom: 0.75rem; }
+.enfoque-section p { font-size: 0.95rem; line-height: 1.9; max-width: 52ch; }
+.enfoque-section p:last-child { margin-bottom: 0; }
+.enfoque-section h3:not(:first-child) { margin-top: 1.75rem; }
+/* Los proyectos tienen un lugar propio antes de la invitación a consultar mi CV. */
+.selected-work { padding-block: 5rem; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+.section-heading h2 { margin-bottom: 0; }
+.featured-project { display: grid; grid-template-columns: 1.1fr 0.9fr; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: white; }
+.featured-project .project-copy { padding: clamp(1.5rem, 3vw, 3rem); align-self: center; }
+.featured-project h3 { font: 400 1.8rem/1.3 var(--serif); }
+.project-preview { background: var(--lavender); aspect-ratio: 16 / 10; }
+.project-preview img { width: 100%; height: 100%; object-fit: cover; }
+.contact-section { border-top: 1px solid var(--line); padding-block: 5rem; }
+.contact-section .section { display: grid; grid-template-columns: 1fr 0.65fr; align-items: center; gap: 5rem; }
+.contact-section .text-content { max-width: 55ch; }
+.contact-section img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; }
 @media (max-width: 900px) {
-  .scroll-item:first-of-type { padding-top: 7rem !important; }
-  #intro-titulo { font-size: clamp(2.4rem, 8vw, 4.5rem); }
-  .text-content p { overflow-wrap: break-word; }
+  .hero { padding: 7.5rem 0 3.5rem; }
+  .hero .section { gap: 2.5rem; }
+  .enfoque-section { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .enfoque-img { aspect-ratio: 16/9; }
+  .enfoque-section .text-content { padding: 3rem 2rem; }
+  .contact-section .section { gap: 2rem; }
 }
-
-@media (max-width: 900px) {
-  /* En móvil apilamos las mitades para mantener el texto legible. */
-  .second-section { min-height: 0; }
-  .enfoque-section { grid-template-columns: minmax(0, 1fr); }
-  .enfoque-img { aspect-ratio: 4 / 3; }
-  .enfoque-section .text-content { margin: 0 !important; padding: 2rem 1.5rem; }
+@media (max-width: 600px) {
+  .hero .section { grid-template-columns: 1fr; }
+  .hero h1 { max-width: none; font-size: 2.9rem; }
+  .portrait { width: min(100%, 300px); justify-self: center; }
+  .hero-note { margin-top: 1.5rem; }
+  .enfoque-section .text-content { padding: 2.5rem 1.25rem; }
+  .selected-work, .contact-section { padding-block: 3rem; }
+  .section-heading { align-items: start; flex-direction: column; gap: 1rem; }
+  .featured-project, .contact-section .section { grid-template-columns: 1fr; }
+  .contact-section img { max-height: 240px; }
 }

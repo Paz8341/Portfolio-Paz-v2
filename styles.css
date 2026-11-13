@@ -1,359 +1,62 @@
 /* ====== RESET/BASE GLOBAL ====== */
-
-
-* { box-sizing: border-box; }/* Aplica todos los elementos y hace que padding y border no rompan el tamaño real*/
-html {
-  scroll-behavior: smooth; }/* Controla el comportamiento general del scroll */
-body {
-  margin: 0; /* elimina margen por defecto del navegador */
-  font-family: 'Open Sans', sans-serif; }/* fuente base */
-
-/* Contenedor general */
-
-.container { /* Contenedor centrado reutilizable Limita ancho y da aire lateral*/
-  max-width: 1100px;
-  margin: 0 auto;/* centra horizontalmente */
-  padding: 3rem 1.5rem;/* espacio interior */
+:root {
+  /* La paleta conserva el lavanda, beige, rosa y azul de mi primer portfolio. */
+  --ink: #18284a;
+  --text: #303444;
+  --muted: #5d6070;
+  --paper: #f9f8f5;
+  --lavender: #e5e1e8;
+  --beige: #f5f0df;
+  --pink: #ff8fa3;
+  --line: #d9d7d4;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Open Sans', sans-serif;
 }
-
-/* ====== HEADER / NAV (responsive) ====== */
-
-header { /*Contenedor principal del menú superior*/
-  position: sticky; /* se queda arriba al hacer scroll */
-  top: 0;
-  z-index: 1000; /* se mantiene por encima del contenido */
-  background: #F2F1ED;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+* { box-sizing: border-box; } /* Aplica todos los elementos y hace que padding y border no rompan el tamaño real */
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; background: var(--paper); color: var(--text); font: 1rem/1.75 var(--sans); }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-underline-offset: 0.25em; }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { color: var(--ink); }
+h1, h2 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(2.5rem, 4.2vw, 4rem); letter-spacing: -0.04em; }
+h2 { font-size: clamp(2rem, 3vw, 3rem); letter-spacing: -0.025em; }
+h3 { font-size: 1.1rem; line-height: 1.5; }
+p { margin-bottom: 1.25rem; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 5px; }
+footer :focus-visible { outline-color: var(--pink); }
+.container { width: min(100% - 3rem, 1160px); margin-inline: auto; }
+.eyebrow { display: block; font: 600 0.72rem/1.5 var(--sans); letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+.muted { color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+/* Botón rosa (mi estilo), más compacto y con un área cómoda para pulsar. */
+.pink-button, .button-secondary, .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem;
+  min-height: 46px; padding: 0.65rem 1.25rem; border: 1px solid var(--ink);
+  border-radius: 6px; font-size: 0.85rem; font-weight: 600; line-height: 1.6;
+  text-decoration: none; color: var(--ink); background: var(--pink);
+  transition: background-color 0.2s;
 }
-/* Barra de navegación */
-
-.navbar {
-  display: flex; /* coloca elementos en fila */
-  align-items: center; /* centra verticalmente */
-  gap: 1rem;
-  padding: 1rem 0.75rem;
-  margin: 0;
+.pink-button:hover, .btn:hover { background: #ffa8b7; }
+.button-secondary { background: transparent; }
+.button-secondary:hover { background: white; }
+.text-link { display: inline-flex; min-height: 44px; align-items: center; gap: 0.75rem; font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.skip-link { position: fixed; z-index: 2000; top: 0.5rem; left: 1rem; padding: 0.75rem 1rem; background: white; color: var(--ink); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+.tag { display: inline-block; padding: 0.25rem 0.65rem; background: var(--beige); border-radius: 4px; font-size: 0.75rem; color: var(--text); }
+/* ===== FOOTER: identidad original ===== */
+footer { background: #18284a; /* azul del foot */ color: #edeff2; text-align: center; padding: 2.5rem 1rem; }
+.social-icons { display: flex; justify-content: center; align-items: center; gap: 1.75rem; }
+.social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; color: #edeff2; font-size: 30px; text-decoration: none; transition: color 0.3s; } /* ❌ quita la rallita */
+.social-icons a:hover { color: #ff8fa3; }
+@media (max-width: 600px) {
+  .container { width: calc(100% - 2.5rem); }
 }
-/* Logo/ Nombre del sitio */
-
-.logo {
-  font-family: 'Playfair Display', serif; /* fuente decorativa */
-  font-size: 1.4rem; /*tamaño del texto */
-  text-decoration: none; /* sin subrayado */
-  color: #1f1f1f; /* color del texto */
-}
-/* ====== ENLACES DE NAVEGACION ====== */
-
-.nav-links {/* Contenedor de los links del menú */
-  margin-left: auto; /* empuja los links a la derecha */
-  display: flex;/* coloca los links en fila */
-  align-items: center; /* centra verticalmente */
-  gap: 0.75rem; /* espacio entre links */
-}
-
-.nav-links a { /* Estilo de cada enlace del menú */
-  text-decoration: none; /* Sin subrayado */
-  color: #1f1f1f; /* color del texto */
-  background: #C5BC8E; /* fondo del botón */
-  padding: 10px 16px; /* espacio interior */
-  border-radius: 999px; /* forma redondeada */
-  font-size: 0.95rem; /* tamaño de texto */
-}
-
-.nav-links a:hover { /* Hover de los enlaces */
-  background: #ffffff; }  /* cambia el fondo al pasar el ratón */
-
-
-/* ===== HAMBURGUESA CLÁSICA (3 RAYAS) ===== */
-
-/* Botón hamburguesa (contenedor del icono) */
-.nav-toggle {
-  display: none;   /* oculto por defecto (desktop) */
-  margin-left: auto; /* Empuja el botón a la derecha */
-  background: #C5BC8E; /* Fondo verde (igual que los botones del menú) */
-  border: none;   /* Sin borde */
-  border-radius: 999px; /* Forma completamente redondeada */
-  cursor: pointer; /* Cursor de botón clicable */
-  align-items: center;
-  justify-content: center;
-  width: 38px;      /* ancho fijo del botón */
-  height: 28px;     /* alto fijo del botón */
-  padding: 0;       /* evita que la pastilla se alargue */
-
-}
-
-/* Línea central de la hamburguesa */
-.nav-toggle span {
-  position: relative;  /* Referencia para ::before y ::after */
-  width: 6px;  /* Ancho de cada raya */
-  height: 1.5px; /* Grosor de la raya */
-  background: #1f1f1f; /* Color de las rayas */
-  display: block; /* Se comporta como bloque */
-}
-
-/* Rayas superior e inferior */
-.nav-toggle span::before,
-.nav-toggle span::after {
-  content: "";                /* Necesario para que el pseudo-elemento exista */
-  position: absolute;         /* Posición absoluta respecto al span */
-  left: 0;                    /* Alineadas a la izquierda */
-  width: 6px;                /* Mismo ancho que la raya central */
-  height: 1.5px;                /* Mismo grosor */
-  background: #1f1f1f;        /* Mismo color */
-}
-
-/* Raya superior */
-.nav-toggle span::before {
-  top: -4px;                  /* Se coloca arriba de la raya central */
-}
-
-/* Raya inferior */
-.nav-toggle span::after {
-  top: 4px;                   /* Se coloca debajo de la raya central */
-}
-
-
-/* Dropdown idiomas */
-
-.dropdown {/* Contenedor del dropdown (referencia para position:absolute) */
-   position: relative; }/* permite posicionar el menú dentro */
-
-.dropdown-btn {
-  border: none;
-  background: #C5BC8E;
-  padding: 10px 16px;
-  border-radius: 999px; /* forma redondeada */
-  cursor: pointer;
-  font-size: 0.95rem;
-  color: #1f1f1f;
-}
-
-.dropdown-btn:hover { /* Hover del botón de idiomas */
-  background: #ffffff; /* cambio de fondo al pasar el ratón */
-}
-
-.dropdown-menu {/* Menú desplegable (cerrado por defecto) */
-  display: none;/* oculto inicialmente */
-  position: absolute;/* flota sobre el layout */
-  top: 46px;/* separación desde el botón */
-  left: 0;/* alineado a la izquierda */
-  background: #fff;/* fondo blanco */
-  border-radius: 14px;/* esquinas suaves */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);/* sombra flotante */
-  padding: 8px;/* espacio interior */
-  min-width: 160px;/* ancho mínimo */
-}
-
-.dropdown-menu button {/* Botones dentro del menú de idiomas */
-  width: 100%;/* ocupa todo el ancho */
-  border: none;/* sin borde */
-  background: transparent;/* fondo transparente */
-  padding: 10px 10px;/* espacio clicable */
-  border-radius: 10px;/* esquinas redondeadas */
-  text-align: left;/* texto alineado a la izquierda */
-  cursor: pointer;/* cursor interactivo */
-}
-
-.dropdown-menu button:hover { /* Hover de cada idioma */
-  background: #F2F1ED; /* fondo suave al pasar el ratón */
-}
-
-.dropdown.open .dropdown-menu { /* Estado abierto del dropdown (activado por JS) */
-  display: block;  /* muestra el menú */
-}
-
-/* ====== RESPONSIVE MOBILE ====== */
-
-@media (max-width: 700px) {
-  .nav-toggle { /* Muestra el botón hamburguesa en móvil */
-    display: block;
-  }
-
-  .nav-links { /* Oculta el menú por defecto */
-    display: none;/* cerrado inicialmente */
-    width: 100%;/* enlaces en columna */
-    flex-direction: column;
-    align-items: stretch;
-    margin: 0;
-    padding: 0 1.5rem 1rem 1.5rem;
-  }
-
-  .nav-links a,
-  .dropdown-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  header.open .nav-links {  /* Cuando JS añade la clase "open" */
-    display: flex;
-  }
-
-}
-/* ====== PARCHE RESPONSIVE para tu layout actual (scroll-item / section) ====== */
-
-@media (max-width: 900px) {
-
-/* HERO · Imagen full width tipo Adri */
-.scroll-item:first-of-type .image-content {
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-}
-  /* ===== HERO MÓVIL · ORDEN DEFINITIVO ===== */
-
-.scroll-item:first-of-type .section {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-/* rompe el wrapper de texto solo visualmente */
-.scroll-item:first-of-type .text-content {
-  display: contents;
-}
-
-.scroll-item:first-of-type #intro-titulo {
-  order: 1;
-  margin-bottom: 0.5rem;
-}
-
-.scroll-item:first-of-type .image-content {
-  order: 2;
-  width: 100%;
-  max-width: 90vw;      /* ← AQUÍ se hace grande */
-  margin: 1.5rem auto;  /* centrada */
-}
-
-.scroll-item:first-of-type #intro-parrafo {
-  order: 3;
-}
-
-.scroll-item:first-of-type #intro-boton {
-  order: 4;
-}
-
-/* HERO · Imagen más cuadrada */
-.scroll-item:first-of-type .image-content img {
-  width: 100% !important;
-  aspect-ratio:  4/ 5;   /* cuadrada */
-  height: auto !important;
-}
-
- .scroll-item {/* Evita que height:100vh rompa el diseño en móvil */
-  height: auto !important;
-  min-height: auto !important;
-  padding: 2rem 0 !important;
-  display: block !important;   /* evita solapes */
-}
-/* Apilar texto + imagen en columna */
-  .section {
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 1.5rem !important;
-    padding: 2rem 1.5rem !important;
-  }
-
-/* Imágenes generales */
-  .image-content {
-    margin: 0 !important;
-
-  }
-
-/* Texto: bajar tamaños en móvil para que no se monten */
-  .enfoque-section h1,
-  #contact h1 {
-   font-size: 2.2rem !important;
-   line-height: 1.15 !important;
-}
-.text-content {
-    margin-bottom: 1.25rem !important;
-}
-
-.enfoque-section p {
-   max-width: 100% !important;
-}
-/* Botón centrado */
-.pink-button {
-    width: 100%;
-    max-width: 320px;
-    text-align: center;
-  }
-.enfoque-section h1 {
-    margin: 0 0 1rem 0 !important;
-  }
-
-.enfoque-section h2 {
-    margin-top: 1.5rem !important;
-  }
-
-#contact {
-    padding-top: 3rem !important;
-  }
-  }
-  /* ===== AJUSTE LIMPIO BORDES SECCIÓN ENFOQUE (DESKTOP) ===== */
-
-
-/* ====== MEDIA QUERY · MENÚ MÓVIL ======
-
-   Este bloque controla SOLO el comportamiento del menú en pantallas pequeñas
-   (móviles y tablets)
-*/
-/* ===== DROPDOWN IDIOMAS (VISIBILIDAD) ===== */
-
-
-@media (max-width: 768px) {
-.mobile-dropdown {
-  position: absolute;
-  top: 60px;
-  right: 1rem;
-  z-index: 1001;
-}
-
-  .nav-links {/* Oculta los botones verdes (Projects / CV / Languages) en modo móvil */
-    display: none;
-  }
-
-  .nav-toggle {/* Muestra el icono de hamburguesa solo en modo móvil */
-    display: block;
-  }
-    /* ===== DROPDOWN IDIOMAS (MÓVIL) ===== */
-  .dropdown-menu {
-    left: auto;
-    right: 0;
-    min-width: 140px;
-  }
-
-
-/* === ACCIONES MÓVIL (🌍 + ☰) === */
-
-  .mobile-actions {
-    display: flex;          /* coloca 🌍 y ☰ en fila */
-    gap: 0.5rem;            /* espacio entre botones */
-    margin-left: auto;      /* empuja el grupo a la derecha */
-  }
-
-  .mobile-actions .nav-toggle { /* Estilo común para ambos botones */
-    background: #C5BC8E;    /* mismo verde que Projects / CV */
-    border: none;
-    border-radius: 999px;
-    width: 38px;     /* mismo tamaño que el botón base */
-    height: 28px;
-    padding: 0;      /* evita que se alargue */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .lang-toggle {/* Botón idioma (🌍) – visible, limpio y alineado */
-    display: inline-flex;  /* asegura que SE VEA */
-    align-items: center;
-    justify-content: center;
-    background: transparent; /* sin fondo */
-    border: none; /* sin borde */
-    box-shadow: none;
-    color: #1f1f1f; /* MISMO color que Paz / hamburguesa */
-    padding: 8px;
-    font-size: 22px; /* tamaño visible del icono */
-    cursor: pointer;
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV – Paz</title>
+  <title>CV | Paz Castillo Rocha</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles.css">
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main-content" data-ui="skip">Hoppa till innehållet</a>
 <header>
   <div class="navbar">
   <a class="logo" href="index.html">Paz</a>
@@ -49,7 +50,7 @@
 
      <nav class="nav-links" aria-label="Navegación">
 <a href="projects-en.html" id="nav-projects">Projekt</a>
-<a href="cv-en.html" id="nav-cv">CV</a>
+<a href="cv-en.html" id="nav-cv" aria-current="page">CV</a>
       <div class="dropdown">
         <button class="dropdown-btn" id="nav-language" type="button">Languages ▾</button>
 
@@ -63,22 +64,29 @@
   </div>
 </header>
 
-  <main class="container">
-    <h1>Paz Castillo Rocha</h1>
+  <main id="main-content" tabindex="-1" class="container cv-page">
+<div class="cv-heading"><span class="eyebrow">CV / Paz Castillo Rocha</span>    <h1>Paz Castillo Rocha</h1>
     <div class="subtitle">Studerande inom webbutveckling · Tillgänglighet och inkluderande design</div>
 
+</div>
     <section class="card">
-      <h2>Kontakt</h2>
-      <p>📧 <strong>pazcastillorocha@gmail.com</strong></p>
-    </section>
+<h2>Kontakt</h2>
+<div class="cv-content">
+      <p>📧 <a href="mailto:pazcastillorocha@gmail.com"><strong>pazcastillorocha@gmail.com</strong></a>
+</p>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Profil</h2>
+<h2>Profil</h2>
+<div class="cv-content">
       <p>Jag studerar webbutveckling och har ett stort intresse för tillgänglighet och inkluderande design. Min yrkesbakgrund inom specialpedagogisk verksamhet har gett mig en nära och praktisk förståelse för kognitiva, kommunikativa och funktionella hinder. Denna erfarenhet påverkar direkt hur jag arbetar med webbdesign, användbarhet och tydlighet.</p>
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Nyckelkompetenser</h2>
+<h2>Nyckelkompetenser</h2>
+<div class="cv-content">
       <div class="muted">
         <span class="tag">HTML</span>
         <span class="tag">CSS</span>
@@ -89,10 +97,12 @@
         <span class="tag">Användarcentrerat tänkande</span>
         <span class="tag">Microsoft Office</span>
       </div>
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Yrkeserfarenhet</h2>
+<h2>Yrkeserfarenhet</h2>
+<div class="cv-content">
 
       <h3>Stödassistent – specialpedagogisk verksamhet</h3>
       <p class="muted"><strong>Innovitaskolan Joriel</strong> | 2022 – nuvarande</p>
@@ -103,7 +113,7 @@
         <li>Praktisk erfarenhet som präglar mitt arbete med tillgänglig och användarvänlig digital design</li>
       </ul>
 
-      <h3 style="margin-top:1.4rem;">Elevassistent</h3>
+      <h3 class="experience-heading">Elevassistent</h3>
       <p class="muted"><strong>Foucaultgymnasiet</strong> | 2021 – 2022</p>
       <ul>
         <li>Arbete med elever med funktionsnedsättningar</li>
@@ -112,22 +122,26 @@
       </ul>
 
 
-      <h3 style="margin-top:1.4rem;">Övrig yrkeserfarenhet</h3>
+      <h3 class="experience-heading">Övrig yrkeserfarenhet</h3>
       <p class="muted">Erfarenhet från fastighets- och försäkringsbranschen med arbetsuppgifter inom kundservice, teamsamordning och processhantering. Dessa yrkeserfarenheter har gett mig viktiga färdigheter inom effektiv kommunikation, samarbete, ansvarstagande, organisation och ledarskap – kompetenser som jag nu använder i pedagogiska sammanhang och i utvecklingen av digitala projekt med människan i centrum.</p>
 
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Utbildning</h2>
+<h2>Utbildning</h2>
+<div class="cv-content">
       <ul>
         <li>Barnskötarutbildning – Medlearn (2020–2021)</li>
         <li>Pågående studier för att slutföra gymnasieutbildning (Komvux)</li>
         <li>Studier i webbutveckling (HTML, CSS, JavaScript) – pågående</li>
       </ul>
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Språkkunskaper</h2>
+<h2>Språkkunskaper</h2>
+<div class="cv-content">
       <ul>
         <li>Spanska – modersmål</li>
         <li>Valencianska – modersmål</li>
@@ -135,17 +149,22 @@
         <li>Engelska – grundläggande / medelnivå</li>
       </ul>
 
-    </section>
-    <div class="social-icons">
-  <a href="https://github.com/Paz8341" target="_blank" aria-label="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/paz-castillo-268824127" target="_blank" aria-label="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-</div>
+    </div>
+</section>
+</main>
+<footer>
+  <div class="social-icons">
+    <a href="https://github.com/Paz8341" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
 
-  </main>
+      <i aria-hidden="true" class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/paz-castillo-268824127" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+      <i aria-hidden="true" class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

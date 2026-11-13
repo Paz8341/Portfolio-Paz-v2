@@ -1,156 +1,24 @@
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: Proxima Nova;
-      margin: 0;
-      padding: 0;
-      background-color: #D4D0D6;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: #F2F1ED;
-      color: black;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: normal;
-      color: black;
-      padding: 5px 10px;
-      font-family: proxima nova;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 1rem;
-      margin-left: auto;
-      margin-right: 20px;
-      align-items: center;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: black;
-      font-size: 15px;
-      padding: 10px 20px;
-      border-radius: 20px;
-      background-color: #C5BC8E;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .nav-link:hover {
-      background-color: #F2F1ED;
-      color: #218838;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 120px 2rem 4rem;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: normal;
-      margin: 0 0 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      line-height: 1.6;
-      max-width: 70ch;
-    }
-
-    .grid {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: #F2F1ED;
-      border-radius: 24px;
-      padding: 1.5rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-      display: flex;
-      flex-direction: column;
-      min-height: 220px;
-      gap: 0.8rem;
-    }
-
-    .tag {
-      display: inline-block;
-      background-color: #C5BC8E;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      width: fit-content;
-    }
-
-    .card h2 {
-      font-size: 1.3rem;
-      margin: 0.2rem 0 0.3rem;
-      font-weight: 600;
-    }
-
-    .links {
-      margin-top: auto;
-      display: flex;
-      gap: 0.7rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      text-decoration: none;
-      background-color: #ff8fa3;
-      border: 1px solid #333;
-      color: black;
-      padding: 10px 18px;
-      border-radius: 18px;
-      font-size: 0.95rem;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #ff6f8e;
-    }
-/* ===== FOOTER: centrado y visibilidad de iconos Git Hub y Linkedln ===== */
-
-/* Centra el contenido del footer horizontalmente */
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0; /* espacio arriba y abajo */
+/* Tarjetas reutilizables: imagen, contenido y enlaces reales se mantienen separados. */
+.projects-page { padding-top: 8.5rem; padding-bottom: 5rem; }
+.page-intro { max-width: 680px; margin-bottom: 3rem; }
+.page-intro h1 { margin-bottom: 1.25rem; }
+.page-intro > p { color: var(--muted); font-size: 1.05rem; }
+.project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem; }
+.project-card { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: white; display: flex; flex-direction: column; }
+.project-media { background: var(--lavender); aspect-ratio: 16/10; border-bottom: 1px solid var(--line); overflow: hidden; }
+.project-media img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.project-placeholder { display: flex; flex-direction: column; justify-content: space-between; align-items: start; padding: 2rem; background: var(--beige); color: var(--ink); }
+.project-placeholder .placeholder-name { font: 400 clamp(2.25rem, 4vw, 3.5rem)/1 var(--serif); letter-spacing: -0.04em; }
+.project-placeholder small { font-size: 0.75rem; color: var(--muted); }
+.project-copy { padding: 2rem; display: flex; flex-direction: column; flex: 1; align-items: start; }
+.project-copy .eyebrow { margin-bottom: 0.75rem; }
+.project-copy h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+.project-copy p { font-size: 0.9rem; }
+.technology-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0 0 1.75rem; }
+.project-copy .actions { margin-top: auto; }
+.project-note { border-left: 2px solid #9b405c; padding-left: 1.25rem; color: var(--muted); font-size: 0.85rem; margin-top: 3rem; max-width: 65ch; }
+@media (max-width: 650px) {
+  .projects-page { padding-top: 7rem; padding-bottom: 3rem; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-copy { padding: 1.5rem; }
 }
-
-/* Contenedor de los iconos sociales */
-.social-icons {
-  display: flex;      /* coloca los iconos en fila */
-  gap: 2rem;          /* espacio entre GitHub y LinkedIn */
-}
-
-/* Tamaño de los iconos (Font Awesome) */
-.social-icons a {
-  font-size: 34px;    /* iconos más visibles */
-}
-
-
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
-      .container { padding-top: 130px; }
-    }
-

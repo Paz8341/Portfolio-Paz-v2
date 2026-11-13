@@ -92,6 +92,19 @@ function aplicarIdioma(idioma) {
   if (navLanguage) navLanguage.textContent = textosMenu[1];
   navLinks?.setAttribute("aria-label", textosMenu[3]);
   langToggleMobile?.setAttribute("aria-label", textosMenu[2]);
+  // Las etiquetas con data-ui se comparten sin repetir funciones por página.
+  document.querySelectorAll('[data-ui]').forEach(elemento => {
+    const texto = interfaz[idioma][elemento.dataset.ui];
+    if (texto) elemento.textContent = texto;
+  });
+  document.querySelectorAll('[data-link]').forEach(enlace => {
+    enlace.href = `${enlace.dataset.link}-${idioma}.html`;
+  });
+  document.querySelectorAll('.dropdown-menu button').forEach(boton => {
+    boton.setAttribute('aria-pressed', boton.getAttribute('onclick').includes(`'${idioma}'`));
+  });
+  const tipo = pagina ? pagina[1] === 'cv' ? 'cv' : 'projects' : 'home';
+  document.title = interfaz[idioma][`${tipo}Title`];
   // 1) Cambio los textos visibles según idioma
   if (typeof textos !== "undefined") {
     for (const id in textos[idioma]) {
@@ -103,7 +116,8 @@ function aplicarIdioma(idioma) {
       es: ["Imagen principal del portfolio de Paz", "Mesa con cuadernos y café", "Planta junto a material de oficina"],
       sv: ["Introduktionsbild i Paz portfolio", "Skrivbord med anteckningsböcker och kaffe", "Växt bredvid kontorsmaterial"]
     };
-    document.querySelectorAll("main img").forEach((imagen, i) => { imagen.alt = descripciones[idioma][i]; });
+    // Solo las tres fotografías personales reciben estas descripciones.
+    document.querySelectorAll('.portrait img, .enfoque-img img, .contact-section img').forEach((imagen, i) => { imagen.alt = descripciones[idioma][i]; });
   }
   // 2) Cambio enlaces según idioma (CV y Projects)
   for (const id of ["nav-projects", "intro-boton", "nav-cv", "contacto-boton"]) {

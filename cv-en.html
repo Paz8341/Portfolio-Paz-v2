@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV – Paz</title>
+  <title>CV | Paz Castillo Rocha</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles.css">
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main-content" data-ui="skip">Skip to content</a>
 <header>
   <div class="navbar">
   <a class="logo" href="index.html">Paz</a>
@@ -49,7 +50,7 @@
 
      <nav class="nav-links" aria-label="Navegación">
 <a href="projects-en.html" id="nav-projects">Projects</a>
-<a href="cv-en.html" id="nav-cv">CV</a>
+<a href="cv-en.html" id="nav-cv" aria-current="page">CV</a>
       <div class="dropdown">
         <button class="dropdown-btn" id="nav-language" type="button">Languages ▾</button>
 
@@ -63,27 +64,34 @@
   </div>
 </header>
 
-  <main class="container">
-    <h1>Paz Castillo Rocha</h1>
+  <main id="main-content" tabindex="-1" class="container cv-page">
+<div class="cv-heading"><span class="eyebrow">CV / Paz Castillo Rocha</span>    <h1>Paz Castillo Rocha</h1>
     <div class="subtitle">Web Development Student · Accessibility & Inclusive Design</div>
 
+</div>
     <section class="card">
-      <h2>Contact</h2>
-      <p>📧 <strong>pazcastillorocha@gmail.com</strong></p>
-    </section>
+<h2>Contact</h2>
+<div class="cv-content">
+      <p>📧 <a href="mailto:pazcastillorocha@gmail.com"><strong>pazcastillorocha@gmail.com</strong></a>
+</p>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Profile</h2>
+<h2>Profile</h2>
+<div class="cv-content">
       <p>
       Web development student with a strong interest in accessibility and inclusive design.
       My professional background in special education has provided me with a close, practical
       understanding of cognitive, communicative and functional barriers.
       This experience directly influences how I approach web design, usability and clarity.
       </p>
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Key Skills</h2>
+<h2>Key Skills</h2>
+<div class="cv-content">
       <div class="muted">
         <span class="tag">HTML</span>
         <span class="tag">CSS</span>
@@ -94,10 +102,12 @@
         <span class="tag">User-centered thinking</span>
         <span class="tag">Microsoft Office</span>
       </div>
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Professional Experience</h2>
+<h2>Professional Experience</h2>
+<div class="cv-content">
 
       <h3>Support Assistant – Special Education</h3>
       <p class="muted"><strong>Innovitaskolan Joriel</strong> | 2022 – Present</p>
@@ -108,7 +118,7 @@
         <li>Practical experience that informs my approach to accessible and user-friendly digital design</li>
       </ul>
 
-      <h3 style="margin-top:1.4rem;">Teaching Assistant</h3>
+      <h3 class="experience-heading">Teaching Assistant</h3>
       <p class="muted"><strong>Foucaultgymnasiet</strong> | 2021 – 2022</p>
       <ul>
         <li>Worked with students with functional variations</li>
@@ -117,7 +127,7 @@
       </ul>
 
 
-      <h3 style="margin-top:1.4rem;">Additional Professional Experience</h3>
+      <h3 class="experience-heading">Additional Professional Experience</h3>
       <p class="muted">
          Experience in the real estate and insurance sectors, performing customer service, team coordination,
          and process management functions. These professional experiences allowed me to develop key skills
@@ -126,19 +136,23 @@
          digital projects.
 </p>
 
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Education</h2>
+<h2>Education</h2>
+<div class="cv-content">
       <ul>
         <li>Childcare Education (Barnskötare) – Medlearn (2020–2021)</li>
         <li>Ongoing studies to complete upper secondary education (Komvux)</li>
         <li>Web Development studies (HTML, CSS, JavaScript) – ongoing</li>
       </ul>
-    </section>
+    </div>
+</section>
 
     <section class="card">
-      <h2>Languages</h2>
+<h2>Languages</h2>
+<div class="cv-content">
       <ul>
         <li>Spanish – Native</li>
         <li>Valencian – Native</li>
@@ -146,17 +160,22 @@
         <li>English – Basic / Intermediate</li>
       </ul>
 
-    </section>
-    <div class="social-icons">
-  <a href="https://github.com/Paz8341" target="_blank" aria-label="GitHub">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/paz-castillo-268824127" target="_blank" aria-label="LinkedIn">
-    <i class="fab fa-linkedin"></i>
-  </a>
-</div>
+    </div>
+</section>
+</main>
+<footer>
+  <div class="social-icons">
+    <a href="https://github.com/Paz8341" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
 
-  </main>
+      <i aria-hidden="true" class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/paz-castillo-268824127" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+
+      <i aria-hidden="true" class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</footer>
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

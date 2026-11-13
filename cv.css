@@ -1,94 +1,28 @@
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #F2F1ED;
-      margin: 0;
-      color: #1f1f1f;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-    }
-
-    h1 { font-size: 3rem; margin-bottom: 0.6rem; }
-    .subtitle { font-size: 1.1rem; opacity: 0.85; margin-bottom: 2rem; }
-
-    h2 { font-size: 1.6rem; margin-top: 2.2rem; margin-bottom: 0.8rem; }
-    p { font-size: 1.1rem; line-height: 1.7; margin: 0 0 1rem 0; }
-
-    .card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 1.6rem;
-      margin-top: 1rem;
-    }
-
-    ul {
-      margin: 0.6rem 0 0 1.2rem;
-      padding: 0;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    @media (max-width: 700px) {
-      .two-col { grid-template-columns: 1fr; }
-      h1 { font-size: 2.4rem; }
-    }
-
-    .pink-button {
-      background-color: #ff8fa3;
-      border: 1px solid #333;
-      color: black;
-      padding: 14px 46px;
-      font-size: 16px;
-      border-radius: 25px;
-      cursor: pointer;
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-    }
-
-    .pink-button:hover { background-color: #ff6f8e; }
-
-    .link {
-      display: inline-block;
-      margin-top: 1.8rem;
-      text-decoration: none;
-      color: #1f1f1f;
-      border-bottom: 1px solid rgba(0,0,0,0.25);
-      padding-bottom: 2px;
-    }
-
-    .muted { opacity: 0.8; }
-    .tag { display:inline-block; padding: 6px 10px; border-radius: 999px; background:#faf3e0; margin: 6px 6px 0 0; }
-    .social-icons {
-       margin-top: 2rem;
-       text-align: center;
+/* El contenido profesional se conserva; cambia únicamente su presentación. */
+.cv-page { padding-top: 8.5rem; padding-bottom: 5rem; max-width: 1040px; }
+.cv-heading { border-bottom: 1px solid var(--ink); padding-bottom: 2rem; margin-bottom: 0; }
+.cv-heading h1 { margin-bottom: 1rem; }
+.subtitle { color: var(--muted); max-width: 60ch; }
+.cv-page .card { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 2rem; padding: 2.25rem 0; border-bottom: 1px solid var(--line); }
+.cv-page .card h2 { font-family: var(--sans); font-size: 0.85rem; font-weight: 600; line-height: 1.5; letter-spacing: 0.04em; margin: 0; }
+.cv-content { min-width: 0; }
+.cv-content p, .cv-content li { font-size: 0.92rem; line-height: 1.9; }
+.cv-content h3 { font-size: 1rem; margin: 0 0 0.4rem; }
+.cv-content ul { margin: 0; padding-left: 1.2rem; }
+.cv-content li + li { margin-top: 0.35rem; }
+.cv-content p:last-child { margin-bottom: 0; }
+.cv-content .muted { font-size: 0.8rem; }
+.cv-content .tag { margin: 0 0.25rem 0.5rem 0; }
+.cv-content strong { overflow-wrap: anywhere; }
+@media (max-width: 700px) {
+  .cv-page { padding-top: 7rem; padding-bottom: 3rem; }
+  .cv-page .card { grid-template-columns: minmax(0, 1fr); gap: 1rem; padding: 1.75rem 0; }
+  .cv-page .card h2 { color: var(--muted); }
 }
-    .social-icons a {
-       text-decoration: none;   /* ❌ quita la rallita */
-       font-size: 1.8rem;       /* 🔍 hace los iconos más grandes */
-       margin: 0 0.6rem;
-       color: #1f1f1f;
+@media print {
+  header, footer, .skip-link { display: none; }
+  .cv-page { padding: 0; width: 100%; }
+  .cv-page .card { break-inside: avoid; padding-block: 1rem; }
+  body { background: white; }
 }
-
-    .social-icons a:hover {
-      opacity: 0.7;
-}
-
-
+.experience-heading { padding-top: 1.5rem; }

@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Fuente de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <!-- Íconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 
 
-    <title>Paz | Portfolio</title>
-    <link rel="stylesheet" href="home.css?v=approach-reference">
+    <title>Paz Castillo Rocha | Web development student</title>
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="navigation.css">
 
 </head>
 <body>
+<a class="skip-link" href="#main-content" data-ui="skip">Skip to content</a>
                                    <!-- ====== ENCABEZADO CON MENÚ ====== -->
 
   <header>
@@ -68,24 +69,28 @@
 </header>
 
                               <!-- ====== CONTENIDO PRINCIPAL ====== -->
-    <main class="scroll-container">
+    <main id="main-content" tabindex="-1" class="scroll-container">
                                               <!-- SECCIÓN 1 -->
 
-<section class="scroll-item">
-<div  class="section">
+<section class="hero">
+<div  class="section container">
 <div  class="text-content">
+<span class="eyebrow" data-ui="student">Web development student</span>
 <h1   id="intro-titulo">Hello, I'm Paz.  </h1>
 <p    id="intro-parrafo">I'm learning web development and I love creating websites that are accessible, clear and meaningful.</p>
-<a    href="projects-en.html"
-      class="pink-button"
-      id="intro-boton"> Discover more
-</a>
+<div class="actions">
+<a href="projects-en.html" class="pink-button" id="intro-boton">Explore projects</a>
+<a href="cv-en.html" class="button-secondary" data-link="cv" data-ui="cv">View CV</a>
+</div>
+<span class="hero-note" data-ui="focus">Accessibility · Inclusive design · Learning by doing</span>
 </div>
 
-<div  class="image-content">
-<img  src="https://i.postimg.cc/T3HyyRSV/9FF4616E-A33A-4D18-80FD-D19FC85ECB50.png"
-      alt="Imagen principal del portfolio de Paz">
-</div>
+<figure class="portrait">
+<img  src="assets/paz.png" width="640" height="720" fetchpriority="high"
+      alt="Paz Castillo Rocha">
+<figcaption><span>Paz Castillo Rocha</span><span>Portfolio / 02</span>
+</figcaption>
+</figure>
 
             </div>
         </section>
@@ -95,15 +100,18 @@
        <section class="second-section" id="projects">
     <div class="enfoque-section">
         <div class="enfoque-img">
-            <img src="https://i.postimg.cc/15RDTkV3/marina-podrez-Qw-Op3y-IPm38-unsplash.jpg" alt="Mesa con cuadernos y café">
+            <img src="assets/approach.jpg" loading="lazy" width="800" height="1200" alt="Mesa con cuadernos y café">
         </div>
         <div class="text-content">
-            <h1 id="enfoque-titulo">My Approach</h1>
+            <span class="eyebrow" data-ui="approachLabel">How I work</span>
+<h2 id="enfoque-titulo">My Approach</h2>
 
-<h2 id="enfoque-sub1"><strong>Design for Everyone</strong></h2>
+<h3 id="enfoque-sub1"><strong>Design for Everyone</strong>
+</h3>
 <p id="enfoque-texto1">I enjoy creating clean, well-structured websites designed for everyone. I care deeply about the details, making sure navigation feels clear, intuitive, and barrier-free.</p>
 
-<h2 id="enfoque-sub2"><strong>Learning by Doing</strong></h2>
+<h3 id="enfoque-sub2"><strong>Learning by Doing</strong>
+</h3>
 <p id="enfoque-texto2">I get involved in every project with curiosity and dedication. I love exploring ideas, finding practical solutions, and creating websites with a clear message that truly connect with people.</p>
 
 
@@ -112,11 +120,29 @@
     </div>
 </section>
 
+<!-- Mis proyectos reales: la tarjeta enlaza a la información disponible. -->
+<section class="selected-work container" aria-labelledby="work-title">
+<div class="section-heading">
+<div><span class="eyebrow" data-ui="projectEyebrow">My learning, in practice</span>
+<h2 id="work-title" data-ui="work">Selected work</h2>
+</div><a class="text-link" data-link="projects" href="projects-en.html"><span data-ui="all">Explore projects</span><span aria-hidden="true">↗</span></a>
+</div>
+<article class="featured-project">
+<div class="project-preview"><img src="assets/portfolio-preview.jpg" alt="" loading="lazy" width="1440" height="900">
+</div>
+<div class="project-copy"><span class="eyebrow" data-ui="status">Personal project · In progress</span>
+<h3>Portfolio Paz</h3>
+<p data-ui="detail">A personal portfolio built from scratch with HTML, CSS and JavaScript. An ongoing exploration of responsive design, accessibility and multilingual experiences.</p><a class="text-link" data-link="projects" href="projects-en.html"><span data-ui="projectLink">About the project</span><span aria-hidden="true">↗</span></a>
+</div>
+</article>
+</section>
+
                                                  <!-- SECCIÓN 3 -->
-        <section class="scroll-item" id="contact">
-            <div class="section">
+        <section class="contact-section" id="contact">
+            <div class="section container">
                 <div class="text-content">
-               <h1 id="contacto-titulo">Contact me </h1>
+               <span class="eyebrow" data-ui="contactLabel">My background</span>
+<h2 id="contacto-titulo">Contact me</h2>
 
 <p id="contacto-texto">
   Interested in my professional profile? Take a look at my CV to learn more about my experience and background.
@@ -129,7 +155,7 @@
 
                 </div>
                 <div class="image-content">
-                    <img src="https://i.postimg.cc/xTqwysz9/planta-en-maceta-cerca-de-telefonos-inteligentes-y-papeleria.jpg" alt="Planta junto a material de oficina">
+                    <img src="assets/contact.jpg" loading="lazy" width="800" height="600" alt="Planta junto a material de oficina">
 
                 </div>
             </div>
@@ -139,13 +165,13 @@
                                        <!-- ====== Foot ====== -->
     <footer>
   <div class="social-icons">
-    <a href="https://github.com/Paz8341" target="_blank" aria-label="GitHub">
+    <a href="https://github.com/Paz8341" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
 
-      <i class="fab fa-github"></i>
+      <i aria-hidden="true" class="fab fa-github"></i>
     </a>
-    <a href="https://www.linkedin.com/in/paz-castillo-268824127" target="_blank" aria-label="LinkedIn">
+    <a href="https://www.linkedin.com/in/paz-castillo-268824127" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
 
-      <i class="fab fa-linkedin"></i>
+      <i aria-hidden="true" class="fab fa-linkedin"></i>
     </a>
   </div>
 </footer>
